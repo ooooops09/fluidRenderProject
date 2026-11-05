@@ -1,0 +1,198 @@
+{
+  "seed": 7,
+  "simulation": {
+    "duration_s": 1800,
+    "warmup_s": 300,
+    "util_window_ms": 100,
+    "event_report_delay_ms": 5
+  },
+  "cluster": {
+    "cache_mb_per_node": 16384,
+    "initial_cache_fill": 0.7,
+    "nodes": [
+      {
+        "id": "e1",
+        "slots": 1,
+        "rate": 0.8,
+        "rack": 0
+      },
+      {
+        "id": "e2",
+        "slots": 1,
+        "rate": 0.8,
+        "rack": 0
+      },
+      {
+        "id": "e3",
+        "slots": 2,
+        "rate": 1.0,
+        "rack": 0
+      },
+      {
+        "id": "e4",
+        "slots": 2,
+        "rate": 1.0,
+        "rack": 0
+      },
+      {
+        "id": "e5",
+        "slots": 2,
+        "rate": 1.0,
+        "rack": 0
+      },
+      {
+        "id": "e6",
+        "slots": 2,
+        "rate": 1.0,
+        "rack": 1
+      },
+      {
+        "id": "e7",
+        "slots": 2,
+        "rate": 1.0,
+        "rack": 1
+      },
+      {
+        "id": "e8",
+        "slots": 4,
+        "rate": 1.3,
+        "rack": 1
+      },
+      {
+        "id": "e9",
+        "slots": 4,
+        "rate": 1.3,
+        "rack": 1
+      },
+      {
+        "id": "e10",
+        "slots": 4,
+        "rate": 1.3,
+        "rack": 1
+      }
+    ]
+  },
+  "telemetry": {
+    "cache_report_interval_ms": 100,
+    "cache_stale_ms": 500,
+    "heartbeat_timeout_ms": 500,
+    "delivery_delay_ms": [
+      2.0,
+      8.0
+    ],
+    "extra_delay_ms": 0.0,
+    "event_reports": true,
+    "failed_lookup_ms": 5.0,
+    "delay_events": []
+  },
+  "network": {
+    "same_rack_gbps": 100,
+    "cross_rack_gbps": 400,
+    "object_store_gbps": 200,
+    "same_rack_latency_ms": 0.2,
+    "cross_rack_latency_ms": 0.8,
+    "object_store_latency_ms": 1.5,
+    "background_amplitude": 0.0,
+    "worker_access_gbps": 100,
+    "rack_uplink_gbps": 400,
+    "max_fetches_per_task": 4,
+    "background_weight_rho": 0.0,
+    "degradations": []
+  },
+  "workload": {
+    "active_sessions": 100,
+    "lambda_per_session": 0.2,
+    "applications": 8,
+    "scenes_per_app": 6,
+    "base_assets_per_app": 42,
+    "scene_assets_per_scene": 56,
+    "user_assets_per_app": 120,
+    "asset_size_min_mb": 4,
+    "asset_size_max_mb": 64,
+    "zipf_alpha": 0.8,
+    "high_complexity_share": 0.25,
+    "low_working_set_mb": [
+      64,
+      256
+    ],
+    "high_working_set_mb": [
+      512,
+      2048
+    ],
+    "scene_transition_prob": 0.025,
+    "deadlines_ms": [
+      50,
+      80,
+      100
+    ],
+    "deadline_shares": [
+      0.1,
+      0.7,
+      0.2
+    ],
+    "source": "synthetic generator; supply trace_file to replay author workload"
+  },
+  "scheduler": {
+    "deadline_relaxation": 1.0,
+    "alall": {
+      "initial_load_weight": 0.58,
+      "min_load_weight": 0.25,
+      "max_load_weight": 1.35,
+      "adapt_up": 1.035,
+      "adapt_down": 0.996,
+      "window": 200
+    },
+    "search": {
+      "population": 16,
+      "iterations": 10
+    }
+  },
+  "reward": {
+    "t_ref_ms": 100.0,
+    "lambda_load": 1.0,
+    "eta": 2.0
+  },
+  "training": {
+    "default_budget": 3600000,
+    "latency_pretrain": 1000000,
+    "load_pretrain": 1000000,
+    "joint": 1600000,
+    "reference_budget": 147456,
+    "reference_pretrain_total": 98304,
+    "reference_adaptation_budget": 32768,
+    "adaptation_budget": 400000,
+    "search_trials": 12,
+    "search_training_seeds": [
+      11,
+      12
+    ],
+    "validation_seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005
+    ],
+    "final_training_seeds": [
+      201,
+      202,
+      203,
+      204,
+      205
+    ],
+    "test_seeds": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010
+    ],
+    "target_validation_cost": 0.31
+  },
+  "checkpoints": {}
+}
