@@ -1,0 +1,2 @@
+numpy>=1.24
+# Optional figure export: install matplotlib>=3.7 or use pip install -e '.[plots]'

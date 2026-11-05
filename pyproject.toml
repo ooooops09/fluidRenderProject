@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fluidrender"
+version = "0.2.0"
+description = "Synchronization-aware cooperative scheduling simulator for cloud rendering services"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+plots = ["matplotlib>=3.7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
