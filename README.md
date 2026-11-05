@@ -1,14 +1,3 @@
-# FluidRender
-
-Synchronization-aware scheduling for cloud-rendering backends. Two actors observe
-the same global state, learn latency and load-stability objectives, and combine
-their node preferences into one worker assignment.
-
-This reference implementation follows the revised manuscript of *FluidRender:
-Synchronization-Aware Cooperative Scheduling for Cloud Rendering Services*. The
-original experiment datasets and trained checkpoints are not included. Default
-runs use generated workloads; reproduction of the published numerical results
-has not been verified with this implementation.
 
 ## Installation
 
